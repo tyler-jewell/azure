@@ -1,10 +1,12 @@
+// ignore_for_file: avoid_print
+
 import 'package:azure/api_client.dart';
 import 'package:azure/azure.dart'; 
 
 void main() async {
   final apiClient = ApiClient(
-    apiKey: 'bb7fb7574f3d4161844a047aa2f0be74',
-    endpoint: 'https://jeweltp.openai.azure.com',
+    apiKey: 'INSERT API KEY HERE',
+    endpoint: 'INSERT ENDPOINT HERE',
   );
 
   final completions = Completions(apiClient);

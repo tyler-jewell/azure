@@ -1,4 +1,8 @@
 /// Represents a request to the OpenAI Completions API.
+library;
+// ignore_for_file: avoid_print
+
+/// Represents a request to the OpenAI Completions API.
 class CompletionsRequest {
   /// Creates a new `CompletionsRequest` instance.
   CompletionsRequest({
@@ -34,7 +38,7 @@ class CompletionsRequest {
               {
                 'type': 'text',
                 'text':
-                    'You are an AI assistant that helps people find information.',
+                    '''You are an AI assistant that helps people find information.''',
               }
             ],
           },
