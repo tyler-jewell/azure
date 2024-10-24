@@ -1,0 +1,31 @@
+{
+    "dart.flutterCreateOrganization": "com.flagseeker",
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewHotReloadOnSaveWatcher": true,
+    "git.autofetch": true,
+    "git.ignoreRebaseWarning": true,
+    "git.rebaseWhenSync": true,
+    "git.replaceTagsWhenPull": true,
+    "IDX.aI.enableCodebaseIndexing": true,
+    "IDX.corgiMode": false,
+    "IDX.webDevTools": true,
+    "IDX.aI.enableInlineCompletion": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      "source.organizeImports": "always"
+    },
+    "files.exclude": {
+      ".flutter-plugins": true,
+      ".flutter-plugins-dependencies": true,
+      ".metadata": true,
+      "custom_lint.log": true,
+      "firestore-debug.log": true,
+      "flagseeker.iml": true,
+      "pubspec.lock": true,
+      "ui-debug.log": true,
+      ".idea": true,
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.defaultFormatter": "Dart-Code.flutter"
+  }

@@ -1,6 +1,6 @@
 name: azure
 description: Azure dart package
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/tyler-jewell/azure
 issue_tracker: https://github.com/tyler-jewell/azure/issues
 
@@ -8,6 +8,7 @@ environment:
   sdk: ^3.1.3
 
 dependencies:
+  http: ^1.1.0
 
 dev_dependencies:
   test: ^1.25.5

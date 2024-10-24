@@ -1,8 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
+/// A Dart package for interacting with Azure OpenAI and other Azure AI services.
+library azure;
 
-export 'src/azure_base.dart';
-
-// TODO(package): Export any libraries intended for clients of this package.
+export './open_ai/open_ai.dart'; 

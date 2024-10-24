@@ -11,6 +11,7 @@
       "Dart-Code.dart-code"
       "tenninebt.vscode-koverage"
       "ryanluker.vscode-coverage-gutters"
+      "ms-vscode.live-server"
     ];
     workspace = {};
     previews = {
