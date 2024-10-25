@@ -27,5 +27,11 @@
     },
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
-    "editor.defaultFormatter": "Dart-Code.flutter"
+    "editor.defaultFormatter": "Dart-Code.flutter",
+    "[nix]": {
+      "editor.defaultFormatter": "google.nix-language"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    }
   }
