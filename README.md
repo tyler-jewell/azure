@@ -16,6 +16,7 @@ The `azure` Dart package is a monorepo consisting of multiple sub-packages, star
   - [Audio Translations](#audio-translations)
 - [Project Structure](#project-structure)
 - [Future-proofing](#future-proofing)
+- [Contributing](#contributing)
 
 ## Features
 
@@ -159,8 +160,7 @@ The `azure` package is designed to support future changes in Azure REST API vers
 If Azure releases a new API version, you can update the `apiVersion` parameter accordingly without changing the core logic of your code.
 
 ## Contributing
-Contributions are welcome! Please submit issues and pull requests to help improve the package.
+To contribute to this package, hit the button below to open up a dev workspace.
 
-## License
-This package is available under the MIT License.
+[![Open in IDX](https://idx.google.com/assets/open-in-idx-button.svg)](https://idx.google.com/new?template=https://github.com/tyler-jewell/azure)
 

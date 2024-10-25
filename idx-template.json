@@ -1,0 +1,14 @@
+{
+    "name": "Azure dart package",
+    "description": "A template for development of Azure dart package in Google IDX",
+    "icon": "https://github.com/tyler-jewell/azure/blob/main/.idx/icon.png",
+    "params": [
+        {
+            "id": "azure_api_key",
+            "name": "Azure OpenAI API Key",
+            "type": "text",
+            "default": "",
+            "required": true
+        }
+    ]
+}
