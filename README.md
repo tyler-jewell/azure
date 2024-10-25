@@ -160,7 +160,21 @@ The `azure` package is designed to support future changes in Azure REST API vers
 If Azure releases a new API version, you can update the `apiVersion` parameter accordingly without changing the core logic of your code.
 
 ## Contributing
-To contribute to this package, hit the button below to open up a dev workspace.
+To contribute to this package, hit the button below to open up a dev workspace:
 
-[![Open in IDX](https://idx.google.com/assets/open-in-idx-button.svg)](https://idx.google.com/new?template=https://github.com/tyler-jewell/azure)
+<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Ftyler-jewell%2Fazure">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://cdn.idx.dev/btn/open_light_32.svg">
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
+    <img
+      height="32"
+      alt="Open in IDX"
+      src="https://cdn.idx.dev/btn/open_purple_32.svg">
+  </picture>
+</a>
+
 
