@@ -162,7 +162,7 @@ If Azure releases a new API version, you can update the `apiVersion` parameter a
 ## Contributing
 To contribute to this package, hit the button below to open up a dev workspace:
 
-<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Ftyler-jewell%2Fazure">
+<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Ftyler-jewell%2Fazure">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
