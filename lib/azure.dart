@@ -1,3 +1,5 @@
+// azure.dart
+
 /// A Dart package for interacting with Azure OpenAI and
 /// other Azure AI services.
 library azure;
