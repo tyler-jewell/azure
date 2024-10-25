@@ -14,7 +14,7 @@
     ];
     workspace = {
       onCreate = {
-        upgrade-dart = "flutter upgrade";
+        upgrade-dart-flutter = "flutter upgrade";
       };
       onStart = {
         pub-get = "dart pub get";

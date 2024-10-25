@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:azure/api_client.dart';
 import 'package:azure/open_ai/models/completions_model.dart';
+import 'package:azure/open_ai/models/open_ai_request.dart';
 
 /// Represents a request to the OpenAI Completions API.
 class Completions {
@@ -12,9 +13,12 @@ class Completions {
   final ApiClient _client;
 
   /// Creates a new `Completions` instance.
-  Future<CompletionsResponse> create(CompletionsRequest request) async {
+  Future<CompletionsResponse> create(
+    OpenAIRequest request,
+    String deploymentId,
+  ) async {
     final response = await _client.post(
-      '/openai/deployments/${request.deploymentId}/chat/completions',
+      '/openai/deployments/$deploymentId/chat/completions',
       data: request.toJson(),
     );
     return CompletionsResponse.fromJson(

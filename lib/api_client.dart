@@ -8,30 +8,53 @@ import 'package:http/http.dart' as http;
 /// Represents an API client for making requests to the OpenAI API.
 class ApiClient {
   /// Creates a new `ApiClient` instance.
-  ApiClient({required this.apiKey, required this.endpoint});
+  ApiClient({
+    required this.apiKey,
+    required this.endpoint,
+    this.apiVersion = '2024-08-01-preview',
+  });
 
   /// API key.
   final String apiKey;
 
+  /// API version.
+  ///
+  /// https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#rest-api-versioning
+  final String apiVersion;
+
   /// Endpoint
-  final String endpoint;
+  final Uri endpoint;
 
   /// Posts a request to the OpenAI API.
   Future<http.Response> post(
     String path, {
     required Map<String, dynamic> data,
   }) async {
-    final url = Uri.parse('$endpoint$path/?api-version=2024-08-01-preview');
-    print(url);
+    /// Add the path to the endpoint.
+    final url = endpoint.replace(
+      path: path,
+      queryParameters: {
+        'api-version': apiVersion,
+      },
+    );
+
     final headers = {
       'Content-Type': 'application/json',
       'api-key': apiKey,
     };
+
     final body = jsonEncode(data);
 
     final response = await http.post(url, headers: headers, body: body);
-    _checkResponse(response);
-    return response;
+
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      return response;
+    } else {
+      print(data);
+      print(url);
+      print(headers);
+      throw ApiException(response.statusCode, response.body);
+    }
   }
 }
 
@@ -48,12 +71,4 @@ class ApiException implements Exception {
 
   @override
   String toString() => 'ApiException: statusCode=$statusCode, message=$message';
-}
-
-void _checkResponse(http.Response response) {
-  if (response.statusCode >= 200 && response.statusCode < 300) {
-    return;
-  } else {
-    throw ApiException(response.statusCode, response.body);
-  }
 }

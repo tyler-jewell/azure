@@ -4,53 +4,6 @@
 library;
 // ignore_for_file: avoid_print
 
-/// Represents a request to the OpenAI Completions API.
-class CompletionsRequest {
-  /// Creates a new `CompletionsRequest` instance.
-  CompletionsRequest({
-    required this.deploymentId,
-    required this.prompt,
-    this.maxTokens,
-    this.temperature,
-    this.topP,
-  });
-
-  /// The deployment ID to use for this request.
-  final String deploymentId;
-
-  /// The prompt to use for this request.
-  final String prompt;
-
-  /// The maximum number of tokens to generate.
-  final int? maxTokens;
-
-  /// Sampling temperature to use. Higher values means the model will
-  /// take more risks.
-  final double? temperature;
-
-  /// An alternative to sampling with temperature, called nucleus sampling.
-  final double? topP;
-
-  /// Converts the request to a JSON map.
-  Map<String, dynamic> toJson() => {
-        'messages': [
-          {
-            'role': 'system',
-            'content': [
-              {
-                'type': 'text',
-                'text':
-                    '''You are an AI assistant that helps people find information.''',
-              }
-            ],
-          },
-        ],
-        if (maxTokens != null) 'max_tokens': maxTokens,
-        if (temperature != null) 'temperature': temperature,
-        if (topP != null) 'top_p': topP,
-      };
-}
-
 /// Represents a response from the OpenAI Completions API.
 class CompletionsResponse {
   /// Creates a new `CompletionsResponse` instance.
@@ -106,7 +59,6 @@ class Choice {
 
   /// Creates a `Choice` from a JSON map.
   factory Choice.fromJson(Map<String, dynamic> json) {
-    print(json);
     return Choice(
       text: (json['message'] as Map<String, dynamic>)['content'] as String? ??
           'no-text',
