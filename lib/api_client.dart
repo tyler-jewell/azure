@@ -3,55 +3,43 @@
 
 import 'dart:convert';
 
+import 'package:azure/completions.dart';
+import 'package:azure/open_ai_request.dart';
 import 'package:http/http.dart' as http;
 
 /// Represents an API client for making requests to the OpenAI API.
 class ApiClient {
   /// Creates a new `ApiClient` instance.
   ApiClient({
-    required this.apiKey,
-    required this.endpoint,
-    this.apiVersion = '2024-08-01-preview',
+    required this.request,
+    required this.completions,
   });
 
-  /// API key.
-  final String apiKey;
+  /// The OpenAI completions endpoint.
+  final Completions completions;
 
-  /// API version.
-  ///
-  /// https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#rest-api-versioning
-  final String apiVersion;
-
-  /// Endpoint
-  final Uri endpoint;
+  /// The OpenAI request.
+  final OpenAIRequest request;
 
   /// Posts a request to the OpenAI API.
-  Future<http.Response> post(
-    String path, {
-    required Map<String, dynamic> data,
-  }) async {
-    /// Add the path to the endpoint.
-    final url = endpoint.replace(
-      path: path,
-      queryParameters: {
-        'api-version': apiVersion,
-      },
-    );
-
+  Future<http.Response> post() async {
     final headers = {
       'Content-Type': 'application/json',
-      'api-key': apiKey,
+      'api-key': completions.apiKey,
     };
 
-    final body = jsonEncode(data);
+    print('request body: ${request.toJson()}');
 
-    final response = await http.post(url, headers: headers, body: body);
+    final response = await http.post(
+      completions.uri,
+      headers: headers,
+      body: jsonEncode(request.toJson()),
+    );
 
     if (response.statusCode >= 200 && response.statusCode < 300) {
       return response;
     } else {
-      print(data);
-      print(url);
+      print(completions.uri);
       print(headers);
       throw ApiException(response.statusCode, response.body);
     }

@@ -136,22 +136,22 @@ class OpenAIRequest {
   /// To json method.
   Map<String, dynamic> toJson() {
     return {
-      'prompt': prompt,
-      'max_tokens': maxTokens,
-      'temperature': temperature,
-      'top_p': topP,
-      'logit_bias': logitBias,
-      'user': user,
-      'n': n,
-      'stream': stream,
-      'logprobs': logprobs,
-      'suffix': suffix,
-      'echo': echo,
-      'stop': stop,
-      'completion_config': completionConfig,
-      'presence_penalty': presencePenalty,
-      'frequency_penalty': frequencyPenalty,
-      'best_of': bestOf,
+      if (prompt != null) 'prompt': prompt,
+      if (maxTokens != null) 'max_tokens': maxTokens,
+      if (temperature != null) 'temperature': temperature,
+      if (topP != null) 'top_p': topP,
+      if (logitBias != null) 'logit_bias': logitBias,
+      if (user != null) 'user': user,
+      if (n != null) 'n': n,
+      if (stream != null) 'stream': stream,
+      if (logprobs != null) 'logprobs': logprobs,
+      if (suffix != null) 'suffix': suffix,
+      if (echo != null) 'echo': echo,
+      if (stop != null) 'stop': stop,
+      if (completionConfig != null) 'completion_config': completionConfig,
+      if (presencePenalty != null) 'presence_penalty': presencePenalty,
+      if (frequencyPenalty != null) 'frequency_penalty': frequencyPenalty,
+      if (bestOf != null) 'best_of': bestOf,
     };
   }
 }

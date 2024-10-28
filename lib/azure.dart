@@ -4,4 +4,7 @@
 /// other Azure AI services.
 library azure;
 
-export './open_ai/open_ai.dart';
+export 'api_client.dart';
+export 'completions.dart';
+export 'completions_model.dart';
+export 'open_ai_request.dart';

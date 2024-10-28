@@ -1,30 +1,27 @@
 // ignore_for_file: avoid_print
 
-import 'package:azure/api_client.dart';
 import 'package:azure/azure.dart';
-import 'package:azure/open_ai/models/open_ai_request.dart';
 
 void main() async {
-  final apiClient = ApiClient(
-    apiKey: 'INSERT API KEY HERE',
-    endpoint: Uri(
-      scheme: 'https',
-      host: 'INSERT ENDPOINT HERE',
-    ),
+  final completions = Completions(
+    endpoint: 'INSERT COMPLETIONS ENDPOINT HERE',
+    deploymentId: 'davinci-002',
+    apiKey: 'INSERT COMPLETIONS API KEY HERE',
+    apiVersion: '2024-02-01',
   );
-
-  final completions = Completions(apiClient);
 
   final request = OpenAIRequest(
     prompt: 'Write a tagline for an ice cream shop.',
   );
 
+  final apiClient = ApiClient(
+    request: request,
+    completions: completions,
+  );
+
   try {
-    final response = await completions.create(
-      request,
-      'gpt-4o-mini',
-    );
-    print('Generated tagline: ${response.choices[0].text}');
+    final response = await apiClient.post();
+    print('Generated tagline: ${response.body}');
   } catch (e) {
     print('Error: $e');
   }

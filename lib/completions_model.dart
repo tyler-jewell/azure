@@ -1,6 +1,6 @@
 // open_ai/models/completions_model.dart
+/// Represents a response from the OpenAI Completions API.
 
-/// Represents a request to the OpenAI Completions API.
 library;
 // ignore_for_file: avoid_print
 
